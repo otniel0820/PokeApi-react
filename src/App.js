@@ -8,8 +8,8 @@ import JokeList from './components/JokeList';
 function App() {
   const [jokes, setJokes]= useState('school')
   return (
-    <div className="pt-[2em]">
-      {/* <PokeList/> */}
+    <div className="pt-[1em] flex flex-col gap-[2em]">
+      <PokeList/>
       <JokeList
       jokes={jokes}
       setJokes={setJokes}
