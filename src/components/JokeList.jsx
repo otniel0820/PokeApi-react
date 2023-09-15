@@ -18,22 +18,22 @@ const JokeList = ({ jokes, setJokes }) => {
   }, []);
 
   const jokeList = dadJoke.results;
-  console.log(jokeList);
+  
   const handleClick = (name) => {
     getJoke(`https://icanhazdadjoke.com/search?term=${name}&limit=5`).then(
       (data) => setDadJoke(data)
       );
       setJokes(name);
-      setIsMark(true)
+      setIsMark(name)
+      
   };
-
   return (
     <div className="flex flex-col gap-[1em]">
       <div className="flex gap-[6em] justify-center items-center">
-        <ButtonJoke key={1} mark={isMark?'#935dc8':'#892be3'} name={"Birds"} handleClick={handleClick} />
-        <ButtonJoke key={2} name={"Car"} handleClick={handleClick} />
-        <ButtonJoke key={3} name={"Hipster"} handleClick={handleClick} />
-        <ButtonJoke key={4} name={"Dad"} handleClick={handleClick} />
+        <ButtonJoke key={1} isMark={isMark} name={"Birds"} handleClick={handleClick} />
+        <ButtonJoke key={2} isMark={isMark} name={"Car"} handleClick={handleClick} />
+        <ButtonJoke key={3} isMark={isMark} name={"Hipster"} handleClick={handleClick} />
+        <ButtonJoke key={4} isMark={isMark} name={"Dad"} handleClick={handleClick} />
       </div>
 
       <div className="flex flex-col gap-[2em] justify-center items-center">
